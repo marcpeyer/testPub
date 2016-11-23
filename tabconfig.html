@@ -5,8 +5,8 @@
 <html>
   <body>
     <form>
-      URL: <input type="text" id="anyUrl" name="anyUrl" value="https://" onchange="onChange()" />
-      Tab Name: <input type="text" id="tabName" name="tabName" value="Any URL" onchange="onChange()" />
+      URL: <input type="text" id="anyVstsUrl" name="anyVstsUrl" value="https://" onchange="onChange()" />
+      Tab Name: <input type="text" id="tabName" name="tabName" value="VSTS URL" onchange="onChange()" />
     </form>
 
     <script src="https://statics.teams.microsoft.com/sdk/v0.2/js/MicrosoftTeams.min.js"></script>
@@ -14,18 +14,22 @@
     <script type="text/javascript">
       microsoftTeams.initialize();
       microsoftTeams.settings.getSettings(function(settings) {
-        alert(settings);
-        alert(settings.contentUrl)
-        alert(settings.suggestedTabName)
+        if(settings.contentUrl && settings.contentUrl != null && settings.contentUrl != '')
+        {
+          var anyVstsUrl = document.getElementById('anyVstsUrl');
+          var tabName = document.getElementById('tabName');
+          anyVstsUrl.value = settings.contentUrl;
+          tabName.value = settings.suggestedTabName;
+        }
       });      
       microsoftTeams.settings.registerOnSaveHandler(function(saveEvent) {
-        var anyUrl = document.getElementById('anyUrl');
+        var anyVstsUrl = document.getElementById('anyVstsUrl');
         var tabName = document.getElementById('tabName');
-        if (anyUrl.value) {
+        if (anyVstsUrl.value) {
           microsoftTeams.settings.setSettings({
-            contentUrl: anyUrl.value,
+            contentUrl: anyVstsUrl.value,
             suggestedTabName: tabName.value,
-            websiteUrl: anyUrl.value,
+            websiteUrl: anyVstsUrl.value,
             removeUrl: window.location.origin + "/testPub/tabremove.html"
           });
         }
@@ -33,13 +37,13 @@
       });
 
       function onChange() {
-        /*var anyUrl = document.getElementById('anyUrl');
+        /*var anyVstsUrl = document.getElementById('anyVstsUrl');
         var tabName = document.getElementById('tabName');
-        if (anyUrl.value) {
+        if (anyVstsUrl.value) {
           document.cfg = {
-            contentUrl: anyUrl.value,
+            contentUrl: anyVstsUrl.value,
             suggestedTabName: tabName.value,
-            websiteUrl: anyUrl.value,
+            websiteUrl: anyVstsUrl.value,
             removeUrl: window.location.origin + "/tabremove.html"
           };
         }*/
