@@ -5,7 +5,7 @@
 <html>
   <body>
     <form>
-      URL: <input type="text" id="anyUrl" name="anyUrl" value="http://" onchange="onChange()" />
+      URL: <input type="text" id="anyUrl" name="anyUrl" value="https://" onchange="onChange()" />
       Tab Name: <input type="text" id="tabName" name="tabName" value="Any URL" onchange="onChange()" />
     </form>
 
@@ -28,7 +28,7 @@
       });
 
       function onChange() {
-        var anyUrl = document.getElementById('anyUrl');
+        /*var anyUrl = document.getElementById('anyUrl');
         var tabName = document.getElementById('tabName');
         if (anyUrl.value) {
           document.cfg = {
@@ -37,9 +37,9 @@
             websiteUrl: anyUrl.value,
             removeUrl: window.location.origin + "/tabremove.html"
           };
-        }
+        }*/
         
-//        microsoftTeams.settings.setValidityState(true);
+        microsoftTeams.settings.setValidityState(true);
       }
     </script>
   </body>
