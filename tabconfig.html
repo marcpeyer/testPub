@@ -28,7 +28,18 @@
       });
 
       function onChange() {
-        microsoftTeams.settings.setValidityState(true);
+        var anyUrl = document.getElementById('anyUrl');
+        var tabName = document.getElementById('tabName');
+        if (anyUrl.value) {
+          document.cfg = {
+            contentUrl: anyUrl.value,
+            suggestedTabName: tabName.value,
+            websiteUrl: anyUrl.value,
+            removeUrl: window.location.origin + "/tabremove.html"
+          };
+        }
+        
+//        microsoftTeams.settings.setValidityState(true);
       }
     </script>
   </body>
