@@ -14,7 +14,9 @@
     <script type="text/javascript">
       microsoftTeams.initialize();
       microsoftTeams.settings.getSettings(function(settings) {
-        document.mySettings = settings; 
+        alert(settings);
+        alert(settings.contentUrl)
+        alert(settings.suggestedTabName)
       });      
       microsoftTeams.settings.registerOnSaveHandler(function(saveEvent) {
         var anyUrl = document.getElementById('anyUrl');
