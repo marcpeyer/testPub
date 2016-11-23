@@ -1,0 +1,28 @@
+{
+  "$schema": "https://statics.teams.microsoft.com/sdk/v0.2/manifest/MicrosoftTeams.schema.json",
+  "manifestVersion": "0.2",
+  "id": "ch.itsystems.teamstab.anyvstsurl",
+  "version": "0.2",
+  "name": "AnyVstsUrl",
+  "developer": {
+    "name": "itsystems AG",   
+    "websiteUrl": "http://www.example.com",
+    "privacyUrl": "http://www.example.com/privacy",
+    "termsOfUseUrl": "http://www.example.com/termsofuse"
+  },
+  "description" : {
+    "short": "Host any VSTS URL as a tab.",
+    "full": "Host any VSTS URL as a tab. Provide the URL and tab name, and click Save. valid domains are *.visualstudio.com."
+  },
+  "icons": {
+    "44": "anyurl44.png",
+    "88": "anyurl88.png"
+  },
+  "accentColor" : "#223344",
+  "configUrl": "https://marcpeyer.github.io/testPub/tabconfig.html",
+  "canUpdateConfig": true,
+  "needsIdentity": false,
+  "validDomains": [
+    "*.visualstudio.com"
+  ]
+}

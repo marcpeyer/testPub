@@ -1,0 +1,16 @@
+{
+  "name": "itsystems-teams-any-vsts-url",
+  "version": "1.0.0",
+  "author": {
+    "name": "itsystems-marc.peyer"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://itsystemsmsdn.visualstudio.com/itsystemsDevelopment/_git/itsystemsToolsAndScripts"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "https://itsystemsmsdn.visualstudio.com/itsystemsDevelopment/_git/itsystemsToolsAndScripts/TeamsTabAnyVstsUrl/readme.md",
+  "private": true
+}
